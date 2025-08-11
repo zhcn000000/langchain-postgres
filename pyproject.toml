@@ -1,6 +1,6 @@
 [project]
 name = "langchain-postgres"
-version = "0.0.15"
+version = "0.0.15.post1"
 description = "An integration package connecting Postgres and LangChain"
 authors = []
 readme = "README.md"
@@ -10,7 +10,7 @@ license = "MIT"
 dependencies = [
     "asyncpg>=0.30.0",
     "langchain-core>=0.2.13,<0.4.0",
-    "pgvector>=0.2.5,<0.4",
+    "pgvector>=0.2.5",
     "psycopg>=3,<4",
     "psycopg-pool>=3.2.1,<4",
     "sqlalchemy>=2,<3",
@@ -35,10 +35,10 @@ test = [
 
 [tool.ruff.lint]
 select = [
-  "E",    # pycodestyle
-  "F",    # pyflakes
-  "I",    # isort
-  "T201", # print
+    "E",    # pycodestyle
+    "F",    # pyflakes
+    "I",    # isort
+    "T201", # print
 ]
 
 [tool.mypy]
@@ -77,24 +77,17 @@ ignore-regex = '.*(Stati Uniti|Tense=Pres).*'
 ignore-words-list = 'momento,collison,ned,foor,reworkd,parth,whats,aapply,mysogyny,unsecure,damon,crate,aadd,symbl,precesses,accademia,nin'
 
 [tool.ruff.lint.extend-per-file-ignores]
-"tests/unit_tests/v2/**/*.py" = [
-  "E501",
-]
+"tests/unit_tests/v2/**/*.py" = ["E501"]
 
-"langchain_postgres/v2/**/*.py" = [
-  "E501",
-]
+"langchain_postgres/v2/**/*.py" = ["E501"]
 
 "langchain_postgres/utils/**/*.py" = [
-  "E501",
-  "T201", # Allow print
+    "E501",
+    "T201", # Allow print
 ]
 
 
 "examples/**/*.ipynb" = [
-  "E501",
-  "T201", # Allow print
+    "E501",
+    "T201", # Allow print
 ]
-
-
-
